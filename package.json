@@ -1,0 +1,48 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "JWT Authentication Strategy, JWT issuer and API Keys/Tokens generator.",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "coverage": "istanbul cover _mocha --print both && istanbul check-coverage",
+    "standard": "standard --verbose",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c8management/auth.git"
+  },
+  "keywords": [
+    "authentication",
+    "jwt",
+    "api",
+    "key",
+    "token"
+  ],
+  "author": "C8management",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/c8management/auth/issues"
+  },
+  "homepage": "https://github.com/c8management/auth#readme",
+  "devDependencies": {
+    "body-parser": "^1.15.0",
+    "code": "^2.2.0",
+    "express": "^4.13.4",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "standard": "^6.0.8",
+    "supertest": "^1.2.0"
+  },
+  "dependencies": {
+    "hoek": "^3.0.4",
+    "jsonwebtoken": "^5.7.0",
+    "node-uuid": "^1.4.7",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.0.0",
+    "randomstring": "^1.1.4"
+  }
+}
