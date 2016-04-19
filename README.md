@@ -1,6 +1,11 @@
 # @C8/Auth
 JWT Authentication Strategy, JWT issuer and API Keys/Tokens generator.
 
+## Install
+```
+npm install @c8/auth
+```
+
 ## Usage
 Check the `/examples` folder.
 
