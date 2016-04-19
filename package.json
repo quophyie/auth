@@ -1,5 +1,5 @@
 {
-  "name": "auth",
+  "name": "@c8/auth",
   "version": "1.0.0",
   "description": "JWT Authentication Strategy, JWT issuer and API Keys/Tokens generator.",
   "main": "lib/index.js",
@@ -22,7 +22,7 @@
     "key",
     "token"
   ],
-  "author": "C8management",
+  "author": "C8Management",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/c8management/auth/issues"
