@@ -11,7 +11,8 @@ let server
 
 let auth = new AuthStrategy({
   secretOrKey: 'secret',
-  verify: (jwtPayload, done) => { done(null, jwtPayload) }
+  tokenQueryParameterName: 'token',
+  verify: (jwtPayload, done) => done(null, jwtPayload)
 })
 
 describe('Auth', function () {
@@ -50,6 +51,17 @@ describe('Auth', function () {
     supertest(server)
       .get('/some-authenticated-route')
       .set('authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ')
+      .expect(200)
+      .end(done)
+  })
+
+  it('should allow access to authenticated route by extracting the auth token from the url', function (done) {
+    auth.express.configure(server)
+    server.get('/some-authenticated-route', (req, res) => {
+      res.send()
+    })
+    supertest(server)
+      .get('/some-authenticated-route?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ')
       .expect(200)
       .end(done)
   })
