@@ -1,6 +1,6 @@
 {
   "name": "@c8/auth",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "JWT Authentication Strategy, JWT issuer and API Keys/Tokens generator.",
   "main": "index.js",
   "engines": {
